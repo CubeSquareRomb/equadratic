@@ -54,6 +54,11 @@ class GameViewModel(
             _answer.value = if(_maxRootAsInput.value) _eq.value.x2 else _eq.value.x1
             return true
         }
+        _time.value -= 20 // Decrease time by 20 seconds if answer is incorrect
+        if (_time.value < 0) {
+            _time.value = 0f
+        }
+
         return false
     }
 

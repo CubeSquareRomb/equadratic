@@ -19,7 +19,9 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -51,6 +53,8 @@ fun GameScreen(navController: NavController, innerPadding: PaddingValues, diff: 
     val time by gameViewModel.time.collectAsState()
     val maxRootAsInput by gameViewModel.maxRootAsInput.collectAsState()
     val eq by gameViewModel.eq.collectAsState()
+
+    var showIncorrectAnswerDialog by remember { mutableStateOf(false) }
 
     if (time <= 0) {
         EndDialog(solved) {
@@ -104,7 +108,17 @@ fun GameScreen(navController: NavController, innerPadding: PaddingValues, diff: 
         Spacer(modifier = Modifier.weight(1f))
 
         AnswerInput(Modifier) {
-            gameViewModel.next(it.toInt())
+            val state = gameViewModel.next(it.toInt())
+
+            if (!state) {
+                showIncorrectAnswerDialog = true
+            }
+        }
+
+        if (showIncorrectAnswerDialog) {
+            IncorrectAnswerDialog {
+                showIncorrectAnswerDialog = false
+            }
         }
     }
 }
