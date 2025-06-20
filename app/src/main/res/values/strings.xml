@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Equadratic</string>
+
+    <string name="tut_introducing">Introducing</string>
+    <string name="tut_what_is_eq">What is Equation</string>
+    <string name="tut_step1">Step 1: Reduce</string>
+    <string name="tut_step2">Step 2: Trial and Error</string>
+    <string name="tut_modes">Game Modes</string>
+
+    <string name="tut_introducing_text">Hey there! This game is about solving quadratic equations at speed! Don\'t need to be a math genius — just knowing some basic arithmetic. There are 2 simple steps to solve the equation</string>
+    <string name="tut_what_is_eq_text">To make things easier, our equation is represented as 3 numbers. Our goal is to find 2 solutions (roots). We\'ll try to solve this equation:\n[2, -10, 12]</string>
+    <string name="tut_step1_text">Firstly, the first number must be 1. To do that, just divide all three numbers by the first one. In our case, the first number is 2 — but we need 1. So we divide each number by 2, and now, the equation looks like:\n[1, -5, 6]</string>
+    <string name="tut_step2_text">Now, you need to find 2 unknown numbers that satisfy the condition:\n\n• Their sum equals the second number, BUT WITH THE OPPOSITE SIGN\n• Their product just equals the last number\n\nSince our equation is [1, -5, 6], we need:\n\n• Sum = 5\n• Product = 6\n\nAfter trying some numbers, we find 2 and 3 because:\n\n• 2 + 3 = 5\n• 2 × 3 = 6\n\nSo, these numbers are the roots of our equation!</string>
+    <string name="tut_modes_text">• Easy — Equations with positive roots, and first number is 1\n• Medium — Same as Easy, but includes negative roots too\n• Hard — Like Medium, but the first number cannot be equal only 1\n• Growth — Starts easy and levels up to hard </string>
 </resources>
